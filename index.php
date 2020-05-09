@@ -20,369 +20,313 @@
 	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 	<link href="<?php echo get_template_directory_uri(); ?>/style.css" rel="stylesheet">
 
-<style>
-body {
-background-image: url("<?php echo get_template_directory_uri(); ?>/img/mac.png");
-background-attachment: fixed;
-background-size: cover;
-  background-position: center center;
-
-}
-</style>
 
 </head>
-
-
-
 <body>
 
 
-<!-- Navigation -->
+<!-- ナビ -->
+<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top p-0">
 
-<!-- スペースで複数クラスを付与するmdは、スマホサイズから大きくなった場合の指定 bg-lightはナビの色指定
-stiky-topはナビを上に固定
-・・・上に固定ってどういう意味？-->
-
-<!-- これがナビバーの基本形：詳しくは公式参照 -->
-<!-- https://getbootstrap.com/docs/4.3/components/navbar/ -->
-<!-- 
-navbar-expand-md：mdよりも広くなった場合にナビバーが出現
-navbar-light bg-lightは背景白で、文字色グレー
-sticky-topが有効ではない：ブラウザのせい？
-fixed-topにすると確実に上部に固定だが、Floatになり画像とかぶるのが問題
--->
-<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
-
-<!-- 
-container-fluid： グリッドシステム使う時の基本形：このクラス以下の要素がいい感じに分割される
-navbar-brand：特に必要な感じじゃないが
-class="navbar-toggler：
-data-targetで指定したIDの要素を消したり出したりする、同じIDであれば同時に開閉する
-navbar-toggler-icon：ただのアイコン
-collapse:非表示
-navbar-collapse：Navbarのコンテンツ部分を.navbar-expand-xxと連携して非表示にする
-https://homupedia.com/bootstrap4-navbar.html
-ml-auto:margin lightの略：これはいいが、なぜナビバーボタンが右寄りなのかが解せない
-class：activeは複数あるものを選択状態にしたい場合に使う
-
--->
-<div class="container-fluid">
+<div class="container-fluid m-0 navbar-dark bg-dark p-2">
 	<a class="navbar-brand" href="#"><img class="funny" src="<?php echo get_template_directory_uri(); ?>/img/funnylogo.png" alt=""></a>
-	<!-- <a class="navbar-brand" href="#"><i class="fab fa-accusoft"></i></a> -->
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
 	data-target="#navbarResponsive">
 		<span class="navbar-toggler-icon"></span>
 	</button>
 	<div class="collapse navbar-collapse" id="navbarResponsive">
-		<ul class="navbar-nav ml-auto">
-			<li class="nav-item  active">
-				<a class="nav-link"  href="#">Home</a>
+		<ul class="navbar-nav ml-auto" id="gnav">
+			<li class="nav-item">
+				<a class="nav-link"  href="#slides">Home</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="#about">About</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="#service">Services</a>
+				<a class="nav-link" href="#menu">Menu</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="#team">Team</a>
+				<a class="nav-link" href="#access">Access</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="#connect">Connect</a>
 			</li>
-
-
 		</ul>
-
-
 	</div>
-
-
-
 </div>
 </nav>
 
 
-<!--- Image Slider -->
-
-<!-- 
-data-ride="carousel：これの記述によって、読み込み順にスライドが開始される	
- -->
+<!-- Top画像 -->
 <div id="slides" class="carousel slide" data-ride="carousel">
-
-<!-- 
-おそらくjQueryの記述だと思う 
-data-target：同じページで複数のスライダーが存在する場合、この記述が必要
-また、どれかをclass：activeにしないとスライダーが表示されない
--->
-<ul class="carousel-indicators">
-	<li data-target="#slides" data-slide-to="0" class="active"></li>
-	<li data-target="#slides" data-slide-to="1"></li>
-	<li data-target="#slides" data-slide-to="2"></li>
-</ul>
-<div class="carousel-inner">
-	<div class="carousel-item active">
-		<img src="<?php echo get_template_directory_uri(); ?>/img/back5.jpg" alt="">
-		<div class="carousel-caption">
-			<h1 class="display-2">funny.com</h1>
-			<h3 class="display-2">We are borderless engineers</h3>
-			<button type="button" class="btn btn-outline-light btn-lg">VIEW DEMO</button>
-			<button type="button" class="btn btn-primary btn-lg">Get Started</button>
+	<ul class="carousel-indicators">
+		<li data-target="#slides" data-slide-to="0" class="active"></li>
+		<li data-target="#slides" data-slide-to="1"></li>
+		<li data-target="#slides" data-slide-to="2"></li>
+	</ul>
+	<div id="slides" class="carousel-inner">
+		<div class="carousel-item active">
+			<img src="<?php echo get_template_directory_uri(); ?>/img/home.jpg" alt="">
+			<div class="carousel-caption">
+				<h1 class="display-2">Orion Cafe</h1>
+				<a href="#connect" class="reserved_btn btn btn-lg">予約</a>
+			</div>
+		</div>
+		<div class="carousel-item">
+			<img src="<?php echo get_template_directory_uri(); ?>/img/home1.jpg" alt="">
+		</div>
+		<div class="carousel-item">
+			<img src="<?php echo get_template_directory_uri(); ?>/img/home2.jpg" alt="">
 		</div>
 	</div>
-	<div class="carousel-item">
-		<img src="<?php echo get_template_directory_uri(); ?>/img/back6.jpg" alt="">
-	</div>
-	<div class="carousel-item">
-		<img src="<?php echo get_template_directory_uri(); ?>/img/back3.jpg" alt="">
-	</div>
-</div>
 </div>
 
-<!--- Jumbotron -->
-<!-- https://tonari-it.com/bootstrap-jumbotron/ 
-h1,pタグをいい感じに調整してくれるやつ-->
-<div id="about" class="container-fluid">
-<div class="row jumbotron">
-	<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xm-10">
-		<p class="lead">This is a pen This is a pen This is a pen This is a pen This is a pen This is a pen This is a pen This is a pen </p>
-	</div>
-	<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xm-2">
-		<a href="#"><button type="button" class="btn btn-outline-secondary btn-lg">Web Hosting</button></a>
-	</div>
 
-</div>
-</div>
 
-<!--- Welcome Section -->
-<div id="service" class="container-fluid padding">
-<div class="row welcome text-center">
-	<div class="col-12">
-		<h1 class="display-4">Built with ease.</h1>
-	</div>
-	<hr>
-	<div class="col-12">
-		<p class="lead">This is a pen This is a pen This is a pen This is a pen This is a pen This is a pen</p>
-	</div>
-</div>
-</div>
 
-<!--- Three Column Section -->
-<div class="container-fluid padding">
-<div class="row text-center padding">
-	<div class="col-xs-12 col-sm-6 col-md-4">
-		<i class="fas fa-code"></i>
-		<h3>HTML5</h3>
-		<p>Built with the latest version of HTML, HTML5.</p>
-	</div>
-	<div class="col-xs-12 col-sm-6 col-md-4">
-		<i class="fas fa-bold"></i>
-		<h3>BOOTSTRAP</h3>
-		<p>Built with the latest version of Bootstrap, Bootstrap 4.</p>
-	</div>
-	<div class="col-sm-12 col-md-4">
-		<i class="fab fa-css3"></i>
-		<h3>CSS3</h3>
-		<p>Built with the latest version of CSS, CSS3.</p>
-	</div>
-<div>
-	<hr class="my-4">
-</div>
-
-</div>
-</div>
-
-<!--- Two Column Section -->
-<div class="container-fluid padding">
-<div class="row padding">
-	<div class="col-md-12 col-lg-6">
-		<h2>If you build it...</h2>
-		<p>This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple </p>
-		<p>This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple </p>
-		<p>This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple </p>
-		<br>
-		<a href="#" class="btn btn-primary">Learn More</a>
-	</div>
-	<div class="col-lg-6">
-		<img src="<?php echo get_template_directory_uri(); ?>/img/desk.jpg" class="img-fluid">
-	</div>
-</div>
-</div>
-
-<hr class="my-4">
-
-<!--- Fixed background -->
-<figure>
-	<!-- これは、指定の画像なのか？またはBootstrapで準備された画像なのか？ -->
-	<div class="fixed-wrap">
-		<div id="fixed">
+<!-- News -->
+<section id="news">
+	<div class="bg-white text-md-center">
+		<h3 class="text-center m-auto p-3">NEWS</h3>
+		<hr>
+		<div class="p-4">
+			<p >2020/01/24</p>
+			<p>営業時間変更</br>ランチの開始時間が11時から11時30分に変更になりました。
+			</p>
+		</div>
+		<div class="p-4">
+			<p >2019/９/24</p>
+			<p>新作メニュー</br>季節のプレートが秋バージョンになりました。
+			</p>
 		</div>
 	</div>
-</figure>
-
-<!--- Emoji Section -->
-<button class="fun" data-toggle="collapse" data-target="#emoji">Click for fun	
-</button>
-<div id="emoji" class="collapse">
-<div class="container-fluid padding">
-<div class="row text-center">
-	<div class="col-sm-6 col-md-3">
-		<img class="gif" src="<?php echo get_template_directory_uri(); ?>/img/1.gif">
-	</div>
-	<div class="col-sm-6 col-md-3">
-			<img class="gif" src="<?php echo get_template_directory_uri(); ?>/img/2.gif">
-	</div>
-	<div class="col-sm-6 col-md-3">
-			<img class="gif" src="<?php echo get_template_directory_uri(); ?>/img/3.gif">
-	</div>
-	<div class="col-sm-6 col-md-3">
-			<img class="gif" src="<?php echo get_template_directory_uri(); ?>/img/4.gif">
-	</div>
-
-</div>
-</div>
-</div>
+</section>
 
 
-<!--- Meet the team -->
-<div id="team" class="container-fluid padding">
-<div class="row welcome text-center">
-	<div class="col-12">
-		<h1 class="display-4">Meet the Team</h1>
-	</div>
-	<hr>
-</div>
-</div>
+<!--- About -->
+<Section id="about">
+	<div class="about">
+		<div id="service" class="container-fluid">
+			<div class="row text-center text-white">
+				<div class="col-12">
+					<h1 class="border-bottom">About</h1>
+				</div>
+				<div class="col-12">
+					<p class="lead font-weight-bold">たくさんのこだわりが詰まったカフェ</p>
+				</div>
+			</div>
+		</div>
 
-<!--- Cards -->
-<div class="container-fluid padding">
-<div class="row padding">
-	<div class="col-md-4">
-		<div class="card">
-			<img class="card-img-top" src="<?php echo get_template_directory_uri(); ?>/img/team4.jpg">
-			<div class="card-body">
-				<h4 class="card-title">John Doe</h4>
-				<p class="card-text">John is a super web designer </p>
-				<a href="#" class="btn btn-outline-secondary">See Profile</a>
+		<!--- About 説明文-->
+		<div class="about_info">
+			<div class="about_info text-md-center p-3 mx-5 bg-white ">
+				<h5 class="text-center py-3">食</h5>
+				<p>このカフェでは一杯一杯丁寧に淹れるハンドドリップコーヒーや、地元の食材をふんだんに使ったメニュー、自家製のケーキや人気のパフェをご用意しています。 </p>
+				<h5 class="text-center py-3">空間</h5>
+				<p>ここにきたら "ほっと" する。そんな空間にするために、内装を手作りしこだわったものだけを並べました。</p>
 			</div>
 		</div>
 	</div>
-	<div class="col-md-4">
+</section>
+
+<!--- Menu -->
+<section id="menu">
+	<div class="bg-white">
+		<h1 class="text-center">MENU</h1>
+		<hr>
+	</div>
+
+	<!--- Cards -->
+	<div class="container-fluid row text-center">
+		<div class="col-md-4 my-3">
 			<div class="card">
-				<img class="card-img-top" src="<?php echo get_template_directory_uri(); ?>/img/team2.jpg">
+				<img class="card-img-top" src="<?php echo get_template_directory_uri(); ?>/img/lanch5.jpg">
 				<div class="card-body">
-					<h4 class="card-title">Dee Jo</h4>
-					<p class="card-text">Dee is an adhesive recruiter</p>
-					<a href="#" class="btn btn-outline-secondary">See Profile</a>
+					<h4 class="card-title">Lanch</h4>
+					<a href="#lanch" class="btn btn-outline-secondary">詳細</a>
 				</div>
 			</div>
 		</div>
-		<div class="col-md-4">
-				<div class="card">
-					<img class="card-img-top" src="<?php echo get_template_directory_uri(); ?>/img/team3.jpg">
-					<div class="card-body">
-						<h4 class="card-title">Phil Ho</h4>
-						<p class="card-text">Phil is a genius engineer</p>
-						<a href="#" class="btn btn-outline-secondary">See Profile</a>
-					</div>
+		<div class="col-md-4 my-3">
+			<div class="card">
+				<img class="card-img-top" src="<?php echo get_template_directory_uri(); ?>/img/tea-main.jpg">
+				<div class="card-body">
+					<h4 class="card-title">Tea</h4>
+					<a href="#tea" class="btn btn-outline-secondary">詳細</a>
 				</div>
 			</div>
-</div>
-</div>
+		</div>
+		<div class="col-md-4 my-3">
+			<div class="card">
+				<img class="card-img-top" src="<?php echo get_template_directory_uri(); ?>/img/party.jpg">
+				<div class="card-body">
+					<h4 class="card-title">Party</h4>
+					<a href="#party" class="btn btn-outline-secondary">詳細</a>
+				</div>
+			</div>
+		</div>
+	</div>
 
-<!--- Two Column Section -->
-<div class="container-fluid padding">
-		<div class="row padding">
-			<div class="col-lg-6">
-				<h2>Our Philosophy</h2>
-				<p>This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple </p>
-				<p>This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple </p>
-				<p>This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple </p>
+
+	<!--- Lanch -->
+	<div id="lanch" class="container-fluid my-5">
+		<div class="row text-center">
+			<div class="col-12">
+				<h1>lanch</h1>
+				<h4>(11:30〜14:00)</h4>
+			</div>
+			<hr>
+		</div>
+		<div class="container-fluid ">
+			<div class="row  m-5 text-center text-lg-left">
+				<div class="col-lg-4">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/lanch2.jpg" alt="プレートランチ" class="img-fluid">
+				</div>
+				<div class="col-lg-8">
+					<h3 class="mb-5">プレートランチ</h3>
+					<p>メインはハンバーグ、唐揚げ、トンテキからお選びください。ごはん(白米or雑穀米)</p>
+					<p>料金：1200 円 (税込み)</p>
+					<p>＊プラス 200円 でドリンクが付きます</p>
+					<br>
+				</div>
+			</div>
+			<div class="row  m-5 text-center text-lg-left">
+				<div class="col-lg-4">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/lanch4.jpg" alt="パスタランチ" class="img-fluid">
+				</div>
+				<div class="col-lg-8">
+					<h3 class="mb-5">パスタランチ</h3>
+					<p>5種類のパスタからお選びいただけます。スープ・サラダ付き</p>
+					<p>料金：1000 円 (税込み)</p>
+					<p>＊うにパスタはプラス200円</p>
+					<br>
+				</div>
+			</div>
+			<div class="row  m-5 text-center text-lg-left">
+				<div class="col-lg-4">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/lanch5.jpg" alt="パエリアランチ" class="img-fluid">
+				</div>
+				<div class="col-lg-8">
+					<h3 class="mb-5">パエリアランチ</h3>
+					<p>サラダ/3種の季節のタパス/本日のアヒージョとパン/選べるパエリア(海の幸、鶏肉と野菜、イカ墨からお選びください)</p>
+					<p>料金：1900 円 (税込み)</p>
+					<br>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--- Tea -->
+	<div id="tea" class="container-fluid my-5">
+		<div class="row welcome text-center">
+			<div class="col-12">
+				<h1>Tea</h1>
+				<h4>(14:00〜18:00)</h4>
+			</div>
+			<hr>
+		</div>
+		<div class="container-fluid">
+			<div class="row  m-5 text-center text-lg-left">
+				<div class="col-lg-4">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/tea3.jpg" alt="ケーキ" class="img-fluid">
+				</div>
+				<div class="col-lg-8">
+					<h3 class="mb-5">ケーキセット</h3>
+					<p>ドリンクはコーヒー・紅茶・カフェオレ・オレンジジュース・アップルジュースからお選びください</p>
+					<p>料金：900 円 (税込み)</p>
+					<br>
+				</div>
+			</div>
+			<div class="row  m-5 text-center text-lg-left">
+				<div class="col-lg-4">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/tea2.jpg" alt="フレンチトーストセット" class="img-fluid">
+				</div>
+				<div class="col-lg-8">
+					<h3 class="mb-5">パスタランチ</h3>
+					<p>ドリンクはコーヒー・紅茶・カフェオレ・オレンジジュース・アップルジュースからお選びください</p>
+					<p>ソースはイチゴ・チョコレート・オレンジの3種類からお選びできます。</p>
+					<p>料金：800 円 (税込み)</p>
+					<br>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--- party -->
+	<div id="party" class="container-fluid my-5">
+		<div class="row welcome text-center">
+			<div class="col-12">
+				<h1>Party</h1>
+			</div>
+			<hr>
+		</div>
+		<div class="row  m-5 text-center text-lg-left">
+			<div class="col-lg-4">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/party.jpg" alt="パーティー" class="img-fluid">
+			</div>
+			<div class="col-lg-8">
+				<h3 class="mb-5">Wedding Party</h3>
+				<p>堅苦しくなく、「カジュアルで自分たちらしく」が叶う。それがカフェウエディングの魅力。まるで自宅にゲストを招いたようなアットホーム感、リラックス感、楽しさがある。あなたもここで心あったまるウエディングパーティーを。</p>
+				<p>料金：要相談</p>
 				<br>
 			</div>
-			<div class="col-lg-6">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/back4.jpg" alt="何か間違えています" class="img-fluid">
-			</div>
 		</div>
-		<hr class="my-4">
-		</div>
+	</div>
+</section>
 
-<!--- Connect -->
-<div id="connect" class="container-fluid padding">
-<div class="row text-center padding">
-	<div class="col-12">
-		<h2>Connect</h2>
+<!--- follow -->
+<span id="follow">
+	<div class="follow text-center">
+		<div class="text-white my-5">
+			<h1>follow us</h1>
+			<hr>
+		</div>
+		<div class="follow_text bg-white">
+			<a href="#"><i class="fab fa-facebook"></i></a>
+			<a href="#"><i class="fab fa-twitter"></i></a>
+			<a href="#"><i class="fab fa-instagram"></i></a>
+		</div>
 	</div>
-	<div class="col-12 social padding">
-		<a href="#"><i class="fab fa-facebook"></i></a>
-		<a href="#"><i class="fab fa-twitter"></i></a>
-		<a href="#"><i class="fab fa-google-plus-g"></i></a>
-		<a href="#"><i class="fab fa-instagram"></i></a>
-		<a href="#"><i class="fab fa-youtube"></i></a>
+</span>
+
+<div id="access" class="bg-white m-md-5 p-md-5 text-center">
+	<div class="row welcome text-center">
+		<div class="col-12 py-3">
+			<h1>Access</h1>
+		</div>
+		<hr>
 	</div>
-</div>
+	<div class="row">
+		<div class="col-md-4">
+			<h4 class="py-3">Orion cafe</h4> 
+
+			<p>住所：愛知県名古屋市</p>
+			<p>電話番号：090-999-9999</P>
+			<p>定休日：月曜</P>
+			<p>【営業時間】</p>
+			<p>11:30～18:00(L.O 17:30)</P>
+			<p>駐車場100台(共同駐車場)</p>
+		</div>
+		<div class="col-md-8 d-md-"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3261.4265663082974!2d136.879348215276!3d35.1709193653964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x888e6049a94311f3!2z5ZCN5Y-k5bGL44Oe44Oq44Kq44OD44OI44Ki44K944K344Ki44Ob44OG44Or!5e0!3m2!1sja!2sjp!4v1588037952651!5m2!1sja!2sjp" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe></div>
+	</div>
 </div>
 
 <!--- Footer -->
 <footer>
-<div class="container-fluid padding">
+<div class="container-fluid p-0">
 <div class="row text-center">
-	<div class="col-md-4">
-		<!-- <img src="img/w3newbie.png"> -->
-		<i class="fab fa-accusoft"></i>
-		<hr class="light">
-		<P>000-000-0000</P>
-		<p>aaaaa@gmail.com</p>
-		<p>300 Street Name</p>
-		<p>City, State, 99999</p>
-	</div>
-	<div class="col-md-4">
-		<hr class="light">
-		<h5>Our hours</h5>
-		<hr class="light">
-		<p>Monday: 9am - 5pm</p>
-		<p>Saturday: 10am - 4pm</p>
-		<p>Sunday: closed</p>
-	</div>
-	<div class="col-md-4">
-			<hr class="light">
-			<h5>Our hours</h5>
-			<hr class="light">
-			<p>City, State, 99999</p>
-			<p>City, State, 99999</p>
-			<p>City, State, 99999</p>
-			<p>City, State, 99999</p>
-			<p>City, State, 99999</p>
-	</div>
 	<div class="col-12">
 		<hr class="light">
 		<h5>&copy; funny.com</h5>
 	</div>
 </div>
 </div>
-
-
 </footer>
 
 
+<script>
+	'use strict';
 
-
-
-
+</script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-<!--- Check out my course on Udemy! -->
-<!-- <div class="udemy-course" style="position: fixed; bottom: 0; right: 0; margin-bottom: -5px; z-index: 100;">
-	<a href="http://bit.ly/advanced-bootstrap-course" target="_blank" style="z-index: 999!important; cursor: pointer!important;"><img src="https://www.w3newbie.com/wp-content/uploads/nuno-udemy-banner.png" style="max-width: 100%; min-width: 100%;"></a>
-</div> -->
-
-
