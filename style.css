@@ -30,20 +30,34 @@ hr {
 
 .about , .follow{
   background-image: url("img/back.jpg");
-  width:100%;
+  background-size: 100% auto;
   background-attachment: fixed;
   padding: 3%;
 }
   
-  .follow_text, .about_info {
-    opacity:0.8;
-    border-radius:30px;
-  }
+.follow_text, .about_info {
+  opacity:0.8;
+  border-radius:30px;
+}
   
 
 #news #menu #follow{
   margin: 10% 6%;
 }
+/*スクロール*/
+.fadein {
+	opacity : 0.1;
+	transform : translate(0, 80px);
+	transition : all 1500ms;
+	}
+
+/* 画面内に入った状態 */
+.fadein.scrollin {
+	opacity : 1;
+	transform : translate(0, 0);
+  }
+  
+
 /* ナビ設定 */
 .navbar {
   padding: .8rem;
@@ -125,6 +139,10 @@ hr {
   width: 60%;
 }
 
+.menu_line{
+  border-bottom: 3px solid #d5d5d5;
+}
+
 
 /* SNS Follow As*/
 .follow{
@@ -172,7 +190,6 @@ footer {
     font-size: 4rem;
     padding: 2rem;
     }
-
   }
 
 @media (max-width: 970px) {
@@ -203,18 +220,34 @@ footer {
     padding: 1.2rem;
   }
 
+  /*aboutとfollowの共通スタイル*/
+
+  .about , .follow{
+    background-size: 200% auto;
+  }
+  
+  /*about*/
+  #about{
+    margin: 1% 0;
+  }
+  
+  .about_info{
+    padding: 2%;
+  }
+
   /*menu*/
   #lanch img ,#tea img ,#party img{
     width: 70%;
     height: auto;
     padding: 0;
   }
+
 }
 
 
 
 
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .carousel-caption {
     position: absolute;
     top: 40%;
@@ -238,12 +271,19 @@ footer {
     display: none;
   }
 
+
   /*menu*/
   #lanch img ,#tea img ,#party img{
     width: 100%;
     height: auto;
     padding: 0;
   }
+
+    /*地図*/
+    .map{
+      width: 80%;
+      height: 300px;
+    }
 
 }
 

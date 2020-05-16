@@ -1,18 +1,10 @@
 <!DOCTYPE html>
 
-<!-- これをjaに変更するとどうなるのか
-…特に変化はなかった -->
 <html lang="ja">
 <head>
-
-	<!-- UTF-8もなくても影響なかった -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>funny.com</title>
-	<!-- Bootstrap4の公式と比較するとjQueryのところだけ違いあったが、
-	公式版のものに変更しても動作に影響はなかった 
-	更に、srcのintegretyは意味がわからない
-	-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
@@ -29,7 +21,7 @@
 <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top p-0">
 
 <div class="container-fluid m-0 navbar-dark bg-dark p-2">
-	<a class="navbar-brand" href="#"><img class="funny" src="<?php echo get_template_directory_uri(); ?>/img/funnylogo.png" alt=""></a>
+	<a class="navbar-brand" href="#"><img class="funny" src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt=""></a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
 	data-target="#navbarResponsive">
 		<span class="navbar-toggler-icon"></span>
@@ -58,7 +50,7 @@
 
 
 <!-- Top画像 -->
-<div id="slides" class="carousel slide" data-ride="carousel">
+<div id="slides" class="carousel claster" data-ride="carousel">
 	<ul class="carousel-indicators">
 		<li data-target="#slides" data-slide-to="0" class="active"></li>
 		<li data-target="#slides" data-slide-to="1"></li>
@@ -73,10 +65,10 @@
 			</div>
 		</div>
 		<div class="carousel-item">
-			<img src="<?php echo get_template_directory_uri(); ?>/img/home1.jpg" alt="">
+			<img src="<?php echo get_template_directory_uri(); ?>/img/home2.jpg" alt="">
 		</div>
 		<div class="carousel-item">
-			<img src="<?php echo get_template_directory_uri(); ?>/img/home2.jpg" alt="">
+			<img src="<?php echo get_template_directory_uri(); ?>/img/home3.jpg" alt="">
 		</div>
 	</div>
 </div>
@@ -104,7 +96,7 @@
 
 
 <!--- About -->
-<Section id="about">
+<Section id="about" class="claster">
 	<div class="about">
 		<div id="service" class="container-fluid">
 			<div class="row text-center text-white">
@@ -118,8 +110,8 @@
 		</div>
 
 		<!--- About 説明文-->
-		<div class="about_info">
-			<div class="about_info text-md-center p-3 mx-5 bg-white ">
+		<div class="about_info fadein">
+			<div class="about_info text-md-center p-3 mx-lg-5 bg-white ">
 				<h5 class="text-center py-3">食</h5>
 				<p>このカフェでは一杯一杯丁寧に淹れるハンドドリップコーヒーや、地元の食材をふんだんに使ったメニュー、自家製のケーキや人気のパフェをご用意しています。 </p>
 				<h5 class="text-center py-3">空間</h5>
@@ -130,7 +122,7 @@
 </section>
 
 <!--- Menu -->
-<section id="menu">
+<section id="menu" class="claster">
 	<div class="bg-white">
 		<h1 class="text-center">MENU</h1>
 		<hr>
@@ -138,7 +130,7 @@
 
 	<!--- Cards -->
 	<div class="container-fluid row text-center">
-		<div class="col-md-4 my-3">
+		<div class="col-md-4 my-3 fadein">
 			<div class="card">
 				<img class="card-img-top" src="<?php echo get_template_directory_uri(); ?>/img/lanch5.jpg">
 				<div class="card-body">
@@ -147,7 +139,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-md-4 my-3">
+		<div class="col-md-4 my-3 fadein">
 			<div class="card">
 				<img class="card-img-top" src="<?php echo get_template_directory_uri(); ?>/img/tea-main.jpg">
 				<div class="card-body">
@@ -156,7 +148,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-md-4 my-3">
+		<div class="col-md-4 my-3 fadein">
 			<div class="card">
 				<img class="card-img-top" src="<?php echo get_template_directory_uri(); ?>/img/party.jpg">
 				<div class="card-body">
@@ -169,7 +161,7 @@
 
 
 	<!--- Lanch -->
-	<div id="lanch" class="container-fluid my-5">
+	<div id="lanch" class="container-fluid my-5 ">
 		<div class="row text-center">
 			<div class="col-12">
 				<h1>lanch</h1>
@@ -177,8 +169,8 @@
 			</div>
 			<hr>
 		</div>
-		<div class="container-fluid ">
-			<div class="row  m-5 text-center text-lg-left">
+		<div class="container-fluid">
+			<div class="row  m-sm-5 text-center text-lg-left fadein">
 				<div class="col-lg-4">
 					<img src="<?php echo get_template_directory_uri(); ?>/img/lanch2.jpg" alt="プレートランチ" class="img-fluid">
 				</div>
@@ -190,7 +182,7 @@
 					<br>
 				</div>
 			</div>
-			<div class="row  m-5 text-center text-lg-left">
+			<div class="row  m-sm-5 text-center text-lg-left fadein">
 				<div class="col-lg-4">
 					<img src="<?php echo get_template_directory_uri(); ?>/img/lanch4.jpg" alt="パスタランチ" class="img-fluid">
 				</div>
@@ -202,7 +194,7 @@
 					<br>
 				</div>
 			</div>
-			<div class="row  m-5 text-center text-lg-left">
+			<div class="row  m-sm-5 text-center text-lg-left fadein">
 				<div class="col-lg-4">
 					<img src="<?php echo get_template_directory_uri(); ?>/img/lanch5.jpg" alt="パエリアランチ" class="img-fluid">
 				</div>
@@ -226,7 +218,7 @@
 			<hr>
 		</div>
 		<div class="container-fluid">
-			<div class="row  m-5 text-center text-lg-left">
+			<div class="row  m-sm-5 text-center text-lg-left fadein">
 				<div class="col-lg-4">
 					<img src="<?php echo get_template_directory_uri(); ?>/img/tea3.jpg" alt="ケーキ" class="img-fluid">
 				</div>
@@ -237,7 +229,7 @@
 					<br>
 				</div>
 			</div>
-			<div class="row  m-5 text-center text-lg-left">
+			<div class="row  m-sm-5 text-center text-lg-left fadein">
 				<div class="col-lg-4">
 					<img src="<?php echo get_template_directory_uri(); ?>/img/tea2.jpg" alt="フレンチトーストセット" class="img-fluid">
 				</div>
@@ -260,7 +252,7 @@
 			</div>
 			<hr>
 		</div>
-		<div class="row  m-5 text-center text-lg-left">
+		<div class="row  m-sm-5 text-center text-lg-left fadein fadein">
 			<div class="col-lg-4">
 				<img src="<?php echo get_template_directory_uri(); ?>/img/party.jpg" alt="パーティー" class="img-fluid">
 			</div>
@@ -281,7 +273,7 @@
 			<h1>follow us</h1>
 			<hr>
 		</div>
-		<div class="follow_text bg-white">
+		<div class="follow_text bg-white fadein">
 			<a href="#"><i class="fab fa-facebook"></i></a>
 			<a href="#"><i class="fab fa-twitter"></i></a>
 			<a href="#"><i class="fab fa-instagram"></i></a>
@@ -289,14 +281,14 @@
 	</div>
 </span>
 
-<div id="access" class="bg-white m-md-5 p-md-5 text-center">
+<div id="access" class="bg-white m-md-5 p-0 text-center claster">
 	<div class="row welcome text-center">
 		<div class="col-12 py-3">
 			<h1>Access</h1>
 		</div>
 		<hr>
 	</div>
-	<div class="row">
+	<div class="row m-3">
 		<div class="col-md-4">
 			<h4 class="py-3">Orion cafe</h4> 
 
@@ -307,14 +299,14 @@
 			<p>11:30～18:00(L.O 17:30)</P>
 			<p>駐車場100台(共同駐車場)</p>
 		</div>
-		<div class="col-md-8 d-md-"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3261.4265663082974!2d136.879348215276!3d35.1709193653964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x888e6049a94311f3!2z5ZCN5Y-k5bGL44Oe44Oq44Kq44OD44OI44Ki44K944K344Ki44Ob44OG44Or!5e0!3m2!1sja!2sjp!4v1588037952651!5m2!1sja!2sjp" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe></div>
+		<div class="col-md-8 text-md-left"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3261.4265663082974!2d136.879348215276!3d35.1709193653964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x888e6049a94311f3!2z5ZCN5Y-k5bGL44Oe44Oq44Kq44OD44OI44Ki44K944K344Ki44Ob44OG44Or!5e0!3m2!1sja!2sjp!4v1588037952651!5m2!1sja!2sjp" width="90%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" class="map"></iframe></div>
 	</div>
 </div>
 
 <!--- Footer -->
 <footer>
-<div class="container-fluid p-0">
-<div class="row text-center">
+<div class="container-fluid p-0 m-0">
+<div class="row text-center p-0 m-0">
 	<div class="col-12">
 		<hr class="light">
 		<h5>&copy; funny.com</h5>
@@ -322,11 +314,35 @@
 </div>
 </div>
 </footer>
-
-
 <script>
-	'use strict';
+	$(function(){
+		$(window).scroll(function (){
+			$('.fadein').each(function(){
+				var elemPos = $(this).offset().top;
+				var scroll = $(window).scrollTop();
+				var windowHeight = $(window).height();
 
+				if ((scroll < elemPos +1000) && (elemPos < scroll+ windowHeight)){
+					$(this).addClass('scrollin');
+				}else{
+					$(this).removeClass('scrollin');
+				}
+			});
+			$('.claster').each(function(i){
+				var elemPosTop = $(this).offset().top;
+				var elemPosBtm = $(this).offset().top + $(this).height();
+				var scroll = $(window).scrollTop();
+				var windowHeight = $(window).height();
+
+				if ((scroll < elemPosBtm - 300) && (elemPosTop + 200 < scroll+ windowHeight)){
+					$('.nav-link').eq(i).addClass('menu_line');
+				}else{
+					$('.nav-link').eq(i).removeClass('menu_line');
+				}
+			});
+		});
+	});
 </script>
+
 </body>
 </html>
