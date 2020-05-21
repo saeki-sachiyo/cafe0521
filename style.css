@@ -26,6 +26,10 @@ hr {
   margin-bottom: 1rem;
 }
 
+.wrap {
+  overflow: hidden;
+}
+
 /*aboutとfollowの共通スタイル*/
 
 .about , .follow{
@@ -61,6 +65,8 @@ hr {
 /* ナビ設定 */
 .navbar {
   padding: .8rem;
+  width: 100%;
+  position: fixed;
 }
 
 #header #gnav li a.current {
@@ -115,6 +121,9 @@ hr {
   color: black;
 }
 
+#top-img{
+  padding-top:66px;
+}
 
 .reserved_btn:hover {
   opacity: 0.7;
@@ -219,12 +228,6 @@ footer {
     font-size: 2.5em;
     padding: 1.2rem;
   }
-
-  /*aboutとfollowの共通スタイル*/
-
-  .about , .follow{
-    background-size: 200% auto;
-  }
   
   /*about*/
   #about{
@@ -243,9 +246,6 @@ footer {
   }
 
 }
-
-
-
 
 @media (max-width: 767px) {
   .carousel-caption {
@@ -271,6 +271,12 @@ footer {
     display: none;
   }
 
+/*aboutとfollowの共通スタイル*/
+  .about, .follow{
+	  background-size: auto 100%;
+  	  background-attachment: scroll;
+  }
+	  
 
   /*menu*/
   #lanch img ,#tea img ,#party img{
@@ -278,6 +284,7 @@ footer {
     height: auto;
     padding: 0;
   }
+	
 
     /*地図*/
     .map{
@@ -297,13 +304,4 @@ footer {
   -webkit-backface-visibility: visible;
   backface-visibility: visible;
 }
-
-
-
-
-
-
-
-
-
 
